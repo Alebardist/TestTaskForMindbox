@@ -1,9 +1,19 @@
 ﻿namespace TestTaskForMindbox
 {
-    internal class Rectangle : Figure
+    public class Rectangle : Figure
     {
-        public int LongSide { get; set; }
-        public int ShortSide { get; set; }
+        public float LongSide { get; set; }
+        public float ShortSide { get; set; }
+
+        public Rectangle()
+        {
+        }
+
+        public Rectangle(float longSide, float shortSide)
+        {
+            LongSide = longSide;
+            ShortSide = shortSide;
+        }
 
         public override float CalculateSquare()
         {
