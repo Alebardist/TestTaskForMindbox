@@ -38,5 +38,19 @@ namespace Tests
                 Rectangle rect = new Rectangle(-4, -4);
             });
         }
+
+        [Fact]
+        public void GetSquareMustReturnCorrectSquareOfCircle()
+        {
+            //Arrange
+            var circle = new Circle(6);
+            var square = 113.04;
+
+            //Action
+            var actual = new GeometricCalculator().GetSquare(circle);
+
+            //Assert
+            Assert.Equal(square, actual, 0.1); //digit 0.1 is suitable precession
+        }
     }
 }
