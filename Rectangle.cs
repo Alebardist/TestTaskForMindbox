@@ -2,17 +2,27 @@
 {
     public class Rectangle : Figure
     {
-        public float LongSide { get; set; }
-        public float ShortSide { get; set; }
-
-        public Rectangle()
-        {
-        }
+        private float _longSide;
+        private float _shortSide;
 
         public Rectangle(float longSide, float shortSide)
         {
-            LongSide = longSide;
-            ShortSide = shortSide;
+            if (HaveArgumentsWithNegativeValue(longSide, shortSide))
+            {
+                throw new ArgumentOutOfRangeException("Some of arguments were zero or less");
+            }
+            _longSide = longSide;
+            _shortSide = shortSide;
+        }
+
+        public float LongSide
+        {
+            get { return _longSide; }
+        }
+
+        public float ShortSide
+        {
+            get { return _shortSide; }
         }
 
         public override float CalculateSquare()
